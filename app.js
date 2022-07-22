@@ -51,13 +51,14 @@ let letsGoGame = (realPlayer, pcPlayer) => {
 let playerSelection = "";
 
 function getPrompt () {
-    playerSelection = prompt();
-    playerSelection = playerSelection.toLowerCase();
+    do {
+        playerSelection = prompt("Introduce your option:");
+        playerSelection = playerSelection.toLowerCase();
+    }while (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors" )
+    return playerSelection
+    
 }
 
-// console.log("Computer throw: " + computerSelection);
-// console.log("You throw: " + playerSelection);
-// console.log(letsGoGame(playerSelection, computerSelection));
 
 function game () {
     let points = 0;
@@ -80,6 +81,7 @@ function game () {
         console.log("Computer throw: " + computerSelection)
         console.log("You throw: " + playerSelection)
         console.log(message)
+        console.log("------------------")
         
     }
     if (points >= 3) {
@@ -92,3 +94,4 @@ function game () {
 }
 
 console.log(game());
+
